@@ -1,10 +1,10 @@
 ---
-profile_kerberos::forwardable: "true"
+profile_kerberos::forwardable: true
 profile_kerberos::default_realm: "NCSA.EDU"
 profile_kerberos::renew_lifetime: "7d"
 profile_kerberos::ticket_lifetime: "25h"
-profile_kerberos::dns_lookup_kdc: "true"
-profile_kerberos::dns_lookup_realm: "false"
+profile_kerberos::dns_lookup_kdc: true
+profile_kerberos::dns_lookup_realm: false
 profile_kerberos::realms:
   "NCSA.EDU":
     "kdc":

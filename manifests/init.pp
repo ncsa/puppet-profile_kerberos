@@ -1,19 +1,39 @@
-# @summary A short summary of the purpose of this class
+# @summary Configures Kerberos for NCSA
 #
-# A description of what this class does
+# This profile configures Kerberos for NCSA systems
 #
 # @example
 #   include profile_kerberos
+# 
+# @param default_realm
+#   Identifies the default Kerberos realm
+# @param dns_lookup_kdc
+#   Enable using DNS SRV records to locate KDCs and other servers in realm
+# @param dns_lookup_realm
+#   Enable using DNS TXT records to determine the Kerberos realm for the host
+# @param domain_realms
+#   Provides mapping from a domain name to a Kerberos realm
+# @param forwardable
+#   Allows tickets to be forwardable
+# @param logging_default
+#   Indicates how logging will be performed
+# @param realms
+#   Defines Kerberos realms and their properties
+# @param renew_lifetime
+#   The default renewable lifetime for initial ticket requests
+# @param ticket_lifetime
+#   The default lifetime for initial ticket requests
+#
 class profile_kerberos (
-  $default_realm,
-  $forwardable,
-  $renew_lifetime,
-  $ticket_lifetime,
-  $dns_lookup_kdc,
-  $dns_lookup_realm,
-  $realms,
-  $domain_realms,
-  $logging_default,
+  String $default_realm,
+  Boolean $dns_lookup_kdc,
+  Boolean $dns_lookup_realm,
+  Hash $domain_realms,
+  Boolean $forwardable,
+  String $logging_default,
+  Hash $realms,
+  String $renew_lifetime,
+  String $ticket_lifetime,
 ) {
 
   class { 'mit_krb5':
