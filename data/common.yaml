@@ -1,0 +1,55 @@
+---
+profile_kerberos::forwardable: "true"
+profile_kerberos::default_realm: "NCSA.EDU"
+profile_kerberos::renew_lifetime: "7d"
+profile_kerberos::ticket_lifetime: "25h"
+profile_kerberos::dns_lookup_kdc: "true"
+profile_kerberos::dns_lookup_realm: "false"
+profile_kerberos::realms:
+  "NCSA.EDU":
+    "kdc":
+      - "straw.ncsa.illinois.edu"
+      - "wood.ncsa.illinois.edu"
+      - "kerberos.ncsa.uiuc.edu"
+      - "kerberos-1.ncsa.uiuc.edu"
+      - "kerberos-2.ncsa.uiuc.edu"
+    "admin_server": "kadmin.ncsa.uiuc.edu"
+  "TERAGRID.ORG":
+    "kdc":
+      - "kerberos.teragrid.org"
+      - "kerberos-1.teragrid.org"
+      - "kerberos-2.teragrid.org"
+      - "kerberos-3.teragrid.org"
+    "admin_server": "kadmin.teragrid.org"
+  "SDSC.EDU":
+    "kdc":
+      - "kdc3.sdsc.edu"
+      - "kdc2.sdsc.edu"
+    "admin_server": "kdc3.sdsc.edu"
+    "default_domain": "sdsc.edu"
+  "PSC.EDU":
+    "kdc":
+      - "kerberos-1.psc.edu"
+      - "kerberos-2.psc.edu"
+      - "kerberos-3.psc.edu"
+    "admin_server": "kerberos-1.psc.edu"
+  "AD.UILLINOIS.EDU": {}
+profile_kerberos::domain_realms:
+  "NCSA.EDU":
+    "domains":
+      - ".ncsa.illinois.edu"
+      - ".ncsa.uiuc.edu"
+      - ".cosmology.illinois.edu"
+      - ".hdfgroup.uiuc.edu"
+      - ".ncsa.edu"
+      - ".ncsa.teragrid.org"
+      - "ncsa.teragrid.org"
+      - ".web100.org"
+      - "web100.org"
+      - ".trecc.org"
+      - "trecc.org"
+  "AD.UILLINOIS.EDU":
+    "domains":
+      - ".illinois.edu"
+      - ".uiuc.edu"
+profile_kerberos::logging_default: "SYSLOG:INFO:LOCAL6"
