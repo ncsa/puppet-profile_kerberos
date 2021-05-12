@@ -34,17 +34,21 @@ class profile_kerberos (
   Hash $realms,
   String $renew_lifetime,
   String $ticket_lifetime,
+  String $default_ccache_name,
+  Boolean $noaddresses,
 ) {
 
   class { 'mit_krb5':
-    default_realm    => $default_realm,
-    forwardable      => $forwardable,
-    renew_lifetime   => $renew_lifetime,
-    ticket_lifetime  => $ticket_lifetime,
-    dns_lookup_kdc   => $dns_lookup_kdc,
-    dns_lookup_realm => $dns_lookup_realm,
-    realms           => $realms,
-    domain_realms    => $domain_realms,
+    default_realm       => $default_realm,
+    forwardable         => $forwardable,
+    renew_lifetime      => $renew_lifetime,
+    ticket_lifetime     => $ticket_lifetime,
+    dns_lookup_kdc      => $dns_lookup_kdc,
+    dns_lookup_realm    => $dns_lookup_realm,
+    realms              => $realms,
+    domain_realms       => $domain_realms,
+    noaddresses         => $noaddresses,
+    default_ccache_name => $default_ccache_name,
   }
   class { 'mit_krb5::logging':
     default => $logging_default,

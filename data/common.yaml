@@ -5,6 +5,8 @@ profile_kerberos::renew_lifetime: "7d"
 profile_kerberos::ticket_lifetime: "25h"
 profile_kerberos::dns_lookup_kdc: true
 profile_kerberos::dns_lookup_realm: false
+profile_kerberos::noaddresses: false
+profile_kerberos::default_ccache_name: "KEYRING:persistent:%{literal('%')}{uid}"
 profile_kerberos::realms:
   "NCSA.EDU":
     "kdc":
@@ -14,7 +16,7 @@ profile_kerberos::realms:
       - "kerberos-1.ncsa.uiuc.edu"
       - "kerberos-2.ncsa.uiuc.edu"
     "admin_server": "kadmin.ncsa.uiuc.edu"
-    "default_domain" : "ncsa.illinois.edu"
+    "default_domain": "ncsa.illinois.edu"
   "TERAGRID.ORG":
     "kdc":
       - "kerberos.teragrid.org"
