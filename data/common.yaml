@@ -14,6 +14,7 @@ profile_kerberos::realms:
       - "kerberos-1.ncsa.uiuc.edu"
       - "kerberos-2.ncsa.uiuc.edu"
     "admin_server": "kadmin.ncsa.uiuc.edu"
+    "default_domain" : "ncsa.illinois.edu"
   "TERAGRID.ORG":
     "kdc":
       - "kerberos.teragrid.org"
