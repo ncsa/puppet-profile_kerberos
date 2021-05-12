@@ -17,40 +17,13 @@ profile_kerberos::realms:
       - "kerberos-2.ncsa.uiuc.edu"
     "admin_server": "kadmin.ncsa.uiuc.edu"
     "default_domain": "ncsa.illinois.edu"
-  "TERAGRID.ORG":
-    "kdc":
-      - "kerberos.teragrid.org"
-      - "kerberos-1.teragrid.org"
-      - "kerberos-2.teragrid.org"
-      - "kerberos-3.teragrid.org"
-    "admin_server": "kadmin.teragrid.org"
-  "SDSC.EDU":
-    "kdc":
-      - "kdc3.sdsc.edu"
-      - "kdc2.sdsc.edu"
-    "admin_server": "kdc3.sdsc.edu"
-    "default_domain": "sdsc.edu"
-  "PSC.EDU":
-    "kdc":
-      - "kerberos-1.psc.edu"
-      - "kerberos-2.psc.edu"
-      - "kerberos-3.psc.edu"
-    "admin_server": "kerberos-1.psc.edu"
   "AD.UILLINOIS.EDU": {}
 profile_kerberos::domain_realms:
   "NCSA.EDU":
     "domains":
       - ".ncsa.illinois.edu"
       - ".ncsa.uiuc.edu"
-      - ".cosmology.illinois.edu"
-      - ".hdfgroup.uiuc.edu"
       - ".ncsa.edu"
-      - ".ncsa.teragrid.org"
-      - "ncsa.teragrid.org"
-      - ".web100.org"
-      - "web100.org"
-      - ".trecc.org"
-      - "trecc.org"
   "AD.UILLINOIS.EDU":
     "domains":
       - ".illinois.edu"
