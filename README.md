@@ -1,6 +1,8 @@
 # profile_kerberos
  
 Configures NCSA Kerberos
+
+Note: This module has been superseded by [ncsa/puppet-profile_system_auth](https://github.com/ncsa/puppet-profile_system_auth)
  
 ## Dependencies
 - [ccin2p3/mit_krb5](https://forge.puppet.com/ccin2p3/mit_krb5)
